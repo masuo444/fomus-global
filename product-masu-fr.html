@@ -2,8 +2,18 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masu - FOMUS</title>
+    <link rel="canonical" href="https://www.fomusglobal.com/product-masu-fr.html">
+    <link rel="alternate" hreflang="ja" href="https://www.fomusglobal.com/product-masu-ja.html">
+    <link rel="alternate" hreflang="en" href="https://www.fomusglobal.com/product-masu-en.html">
+    <link rel="alternate" hreflang="zh" href="https://www.fomusglobal.com/product-masu-zh.html">
+    <link rel="alternate" hreflang="fr" href="https://www.fomusglobal.com/product-masu-fr.html">
+    <link rel="alternate" hreflang="ar" href="https://www.fomusglobal.com/product-masu-ar.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.fomusglobal.com/product-masu-en.html">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -29,8 +39,80 @@
         .font-heading { font-family: 'Noto Serif JP', serif; }
     </style>
     <script src="language-switcher.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PLACEHOLDER');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4-PLACEHOLDER"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA4-PLACEHOLDER', {
+        'custom_map': {
+          'custom_parameter_1': 'craft_type',
+          'custom_parameter_2': 'product_category',
+          'custom_parameter_3': 'language_preference'
+        }
+      });
+      
+      // Page view tracking with language context
+      gtag('event', 'page_view', {
+        'page_title': document.title,
+        'page_location': window.location.href,
+        'craft_type': 'Traditional Japanese Crafts',
+        'product_category': 'MASU Collection',
+        'language_preference': 'French',
+        'cultural_context': 'Japanese Traditional Arts'
+      });
+    </script>
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Traditional Japanese MASU Sake Cup",
+  "description": "Authentic Japanese MASU sake cup handcrafted from premium hinoki cypress wood by master artisans",
+  "brand": {
+    "@type": "Brand",
+    "name": "FOMUS"
+  },
+  "manufacturer": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FOMUS",
+    "url": "https://www.fomusglobal.com",
+    "logo": "https://www.fomusglobal.com/fomus-premium-japanese-crafts-logo.png",
+    "description": "Premium Japanese traditional crafts and authentic MASU sake cups by master artisans",
+    "sameAs": [
+      "https://www.fomusglobal.com",
+      "https://masukame.fomusglobal.com",
+      "https://github.com/masuo444/FOMUS2"
+    ]
+  },
+  "material": "Hinoki Cypress Wood",
+  "countryOfOrigin": "Japan",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.fomusglobal.com/product-masu-fr.html",
+    "priceCurrency": "USD",
+    "price": "45.00",
+    "availability": "https://schema.org/InStock"
+  }
+}
+    </script>
 </head>
 <body class="bg-cream text-obsidian">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- En-tête -->
     <nav class="bg-cream/95 backdrop-blur-sm border-b border-hinoki fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,28 +298,13 @@
         });
 
         function proceedToStripe() {
-            const selectedCoating = document.querySelector('input[name="coating"]:checked').value;
-            
-            // Mappage des liens produits Stripe
-            const stripeLinks = {
-                'mini-none': 'https://buy.stripe.com/basic-masu-mini',
-                'mini-coating': 'https://buy.stripe.com/basic-masu-mini-coated',
-                'basic-none': 'https://buy.stripe.com/basic-masu-basic',
-                'basic-coating': 'https://buy.stripe.com/basic-masu-basic-coated'
-            };
-            
-            // Puisqu'il n'y a pas d'interface de sélection de taille, afficher une alerte concernant la sélection de taille sur Stripe
-            const message = selectedCoating === 'coating' ? 
-                'Vous serez redirigé vers la page produit masu avec option de revêtement. Veuillez sélectionner la taille sur la page de paiement Stripe.' :
-                'Vous serez redirigé vers la page produit masu. Veuillez sélectionner la taille sur la page de paiement Stripe.';
-                
-            if (confirm(message)) {
-                // Lien vers la page produit de base (taille à sélectionner côté Stripe)
-                const baseUrl = selectedCoating === 'coating' ? 
-                    stripeLinks['mini-coating'] : stripeLinks['mini-none'];
-                window.open(baseUrl, '_blank');
-            }
+            // Direct to the provided Stripe checkout URL
+            window.location.href = 'https://buy.stripe.com/3cIdRaejr1Zz3xW1nJ4ko0o';
         }
     </script>
+
+    <!-- Performance Optimization -->
+    <script src="/performance-optimization.js" defer></script>
+    <script src="/asia-regional-seo.js" defer></script>
 </body>
 </html>
